@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès Protégé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #container {
+            max-width: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Entrez le code d'accès :</h2>
+        <input type="text" id="codeInput" placeholder="Code d'accès" autocomplete="off">
+        <button onclick="checkCode()">Valider</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkCode() {
+            const code = document.getElementById("codeInput").value;
+            const correctCode = "18042015"; // Remplacez par votre code secret
+            const message = document.getElementById("message");
+
+            if (code === correctCode) {
+                window.location.href = "https://www.example.com/contenu"; // Remplacez par votre URL cible
+            } else {
+                message.textContent = "Code incorrect, essayez encore.";
+            }
+        }
+    </script>
+</body>
+</html>
